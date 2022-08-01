@@ -1,0 +1,42 @@
+VCenter:
+  URL: "https://10.102.0.2/sdk" 
+  Username: "cloudadmin@vsphere.local"
+  Password: "863j!Fb2n)mU"
+  ResourcePool: "/SDDC-Datacenter/host/Cluster-1/Resources"
+  Folder: "/SDDC-Datacenter/vm"
+  ESXiVMTemplate: "/SDDC-Datacenter/vm/Lab-Templates/Lab-Template-esxi"
+  VCSAVMTemplate: "/SDDC-Datacenter/vm/Lab-Templates/Lab-Template-vcsa"
+  NFSVMTemplate: "/SDDC-Datacenter/vm/Lab-Templates/Lab-Template-nfs"
+  VyOSVMTemplate: "/SDDC-Datacenter/vm/Lab-Templates/Lab-Template-vyos"
+  Datastore: "/SDDC-Datacenter/datastore/vsanDatastore"
+  NetworkPrefix: "/SDDC-Datacenter/network/"
+NSXT:
+  Host: "10.102.0.3"
+  Username: "cloudadmin"
+  Password: "8m4VcrJ2*p@0"
+  TransportZoneID: "8bbd16f7-ebd2-43ff-9216-075b042c615d"
+  T0Router: "92d27a7d-6380-45b9-b759-cac84f500283"
+DNS:
+  Domain: "lab.avs.ms"
+  Servers: "1.1.1.1"
+  CloudManagerEndpoint: "https://nestedlabclouddns0e1dd372c.azurewebsites.net/api/updatedns?code=46/zoTMBtaoFgEQ51yDD0BRpHerrehf2fHoGmB1Pa0JClk9x2ooibg=="
+HCX:
+  OVA: "https://nestedlabovawus.blob.core.windows.net/7979ae9d-74ee-477c-93ee-0817ab8b52d4/lab-hcx-4.2.1.0.ova"
+Bootstrap:
+  TemplateFolder: "Lab-Templates"
+  ESXi:
+    Name: "Lab-Template-esxi"
+    OVA: "https://nestedlabovawus.blob.core.windows.net/7979ae9d-74ee-477c-93ee-0817ab8b52d4/lab-esxi.ova"
+  VCSA: 
+    Name: "Lab-Template-vcsa"
+    OVA: "https://nestedlabovawus.blob.core.windows.net/7979ae9d-74ee-477c-93ee-0817ab8b52d4/lab-vcsa.ova"
+  NFS:
+    Name: "Lab-Template-nfs"
+    OVA: "https://nestedlabovawus.blob.core.windows.net/7979ae9d-74ee-477c-93ee-0817ab8b52d4/lab-nfs.ova"
+  VYOS:
+    Name: "Lab-Template-vyos"
+    OVA: "https://nestedlabovawus.blob.core.windows.net/7979ae9d-74ee-477c-93ee-0817ab8b52d4/lab-vyos.ova"
+Examples:
+  AppA:
+    Name: "SampleApp-AppA-Standalone"
+    OVA: "https://nestedlabovawus.blob.core.windows.net/7979ae9d-74ee-477c-93ee-0817ab8b52d4/app-a-standalone.ova"
