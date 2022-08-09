@@ -1,9 +1,0 @@
-VLAN: 300
-LabCIDR: "10.2.3.0/24"
-Workloads:
-  webName: "web"
-  webID: 30
-  webGateway: "10.2.23.1/25"
-  appName: "app"
-  appID: 31
-  appGateway: "10.2.23.129/25"
