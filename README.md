@@ -51,6 +51,8 @@ https://gpsusstorage.blob.core.windows.net/avs-embedded-labs/avs-embedded-labs.z
 
 https://github.com/PowerShell/PowerShell
 
+> Once installed, all further operations should be performed from PowerShell Core, not PowerShell. PowerShell Core should be a black icon with a black background, if you have a blue background, you're using the old version of PowerShell, it should have been added to your Start menu.
+
 #### Install VMware PowerCLI
 
 ```
