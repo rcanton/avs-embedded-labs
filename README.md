@@ -204,7 +204,7 @@ In NSX-T it will first create 3 segment profiles per group. In this example it's
 
 ![](/images/image5.png)
 
-Every embedded vCenter as described in the table above will be reachable via https://10.**X**.**Y**.2/ui URL.
+Every embedded vCenter as described in the table above will be reachable via https://10.X.Y.2/ui URL.
 
 - The embedded Datacenter name inside of the vCenter Server is called **OnPrem-SDDC-Datacenter-XY**.
 - The embedded cluster is called **OnPrem-SDDC-Cluster-XY**.
@@ -216,7 +216,7 @@ Every embedded vCenter as described in the table above will be reachable via htt
 
 - A datastore named **LabDatastore** is created off the mounted NFS VM created in each nested environment. It has approximately 500GB of capacity.
 
-![](/images/image6.png)
+![](/images/image7.png)
 
 - A Virtual Distributed Switch (vDS) named **OnPrem-SDDC-VDS-XY** is created in each embedded vCenter Server.
 - Each of the following networks are created:
