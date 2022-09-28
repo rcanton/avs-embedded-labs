@@ -66,14 +66,11 @@ These accounts will need to have roles assigned to them in order to be able to p
 
 ```
 az role assignment create --assignee "Group1@vmwaresales101outlook.onmicrosoft.com" --role "Contributor" --resource-group GPSUS-PARTNER1-Jumpbox
-```
-```
+
 az role assignment create --assignee "Group1@vmwaresales101outlook.onmicrosoft.com" --role "Contributor" --resource-group GPSUS-PARTNER1-Network
-```
-```
+
 az role assignment create --assignee "Group1@vmwaresales101outlook.onmicrosoft.com" --role "Contributor" --resource-group GPSUS-PARTNER1-Operational
-```
-```
+
 az role assignment create --assignee "Group1@vmwaresales101outlook.onmicrosoft.com" --role "Contributor" --resource-group GPSUS-PARTNER1-PrivateCloud
 ```
 
@@ -101,39 +98,31 @@ https://gpsusstorage.blob.core.windows.net/avs-embedded-labs/avs-embedded-labs.z
 - Ensure your AVS SDDC has internet access enabled.
 - If your AVS SDDC /22 range's second octet is anywhere between 1-10, then this will conflict with the defaults being used by the script. We recommend setting the second octect to the 100's to avoid this conflict. If this cannot be done, you will need to edit the script before running it to avoid IP conflicts.
 
-#### Install PowerShell Core
+#### Install PowerShell Core (7)
+Run the following one-liner from Windows PowerShell
+```
+iex "& { $(irm 'https://aka.ms/install-powershell.ps1') } -UseMSI -Quiet"
+```
+Reference: https://github.com/PowerShell/PowerShell
 
-https://github.com/PowerShell/PowerShell
+> Once installed, all further operations should be performed from **PowerShell Core**, not Windows PowerShell.
 
-> Once installed, all further operations should be performed from PowerShell Core, not PowerShell. PowerShell Core should be a black icon with a black background, if you have a blue background, you're using the old version of PowerShell, it should have been added to your Start menu.
+> PowerShell Core should be a black icon with a black background, if you have a light blue background, you're using the old version of PowerShell, it should have been added to your Start menu.
 
-#### Install VMware PowerCLI
-
+#### Commands to Run from PowerShell 7
 ```
-Install-Module VMware.PowerCLI -scope AllUsers -force -SkipPublisherCheck -AllowClobber
-```
-#### Additional Commands to Run
-```
-Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false
-```
-```
-Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
-```
-```
-Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false
-```
-```
+# Change PowerShell ExecutionPolicy
 Set-ExecutionPolicy Unrestricted
-```
-```
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-```
-Set-ExecutionPolicy Bypass
-```
-#### Install YAML PowerShell Module
-```
-Install-Module powershell-yaml
+
+# Install VMware PowerCLI
+Install-Module VMware.PowerCLI -scope AllUsers -Force -SkipPublisherCheck -AllowClobber
+
+# Configure PowerCLI
+Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
+Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
+
+# Install YAML PowerShell Module
+Install-Module powershell-yaml -Force
 ```
 
 #### Edit nestedlabs.yml file
@@ -146,6 +135,8 @@ Install-Module powershell-yaml
     - AVS NSX-T URL
     - AVS NSX-T Username
     - AVS NSX-T cloudadmin password
+
+> If you need advanced text editor, you can either Install VSCode, or use the online version throw Internet browser (Edge) by going to https://vscode.dev/
 
 #### Ready for Deployment
 
