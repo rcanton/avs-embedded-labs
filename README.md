@@ -79,7 +79,7 @@ az role assignment create --assignee "Group1@vmwaresales101outlook.onmicrosoft.c
 You will also need to change the passwords for these accounts:
 
 ```
-az ad user update --id Group1@vmwaresales101outlook.onmicrosoft.com  --password "NewPassword" --force-change-password-next-login false
+az ad user update --id Group1@vmwaresales101outlook.onmicrosoft.com  --password "NewPassword" --force-change-password-next-sign-in false
 ```
 
 > SECTION NOT COMPLETED YET, WILL COMPLETE SOON
