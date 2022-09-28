@@ -136,7 +136,7 @@ Install-Module powershell-yaml -Force
     - AVS NSX-T Username
     - AVS NSX-T cloudadmin password
 
-> If you need advanced text editor, you can either Install VSCode, or use the online version throw Internet browser (Edge) by going to https://vscode.dev/
+> If you need advanced text editor, you can either install VSCode, or use the online version through Internet browser (**Edge**) by going to https://vscode.dev
 
 #### Ready for Deployment
 
