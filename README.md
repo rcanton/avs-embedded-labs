@@ -47,7 +47,7 @@ The CLI deployment uses two files, the ESLZDeploy.deploy.json which contains the
 Once you've edited the JSON files, it's time to start the deployments of your AVS SDDCs by issuing the following command from a terminal:
 
 ```
-az deployment sub create -l brazilsouth -n "202209200928-GPSUS-PARTNER1" -f ".\deploy\ESLZDeploy.deploy.json" -p "@.\parameters\avs-1.json"
+az deployment sub create -l brazilsouth -n "202209200928-GPSUS-PARTNER1" -f ".\parameters\deploy\ESLZDeploy.deploy.json" -p "@.\parameters\avs-1.json"
 ```
 Run the above command for each SDDC you'd like to build. If you don't want to wait for each process to finish or open multiple terminal sessions, add the --no-wait option as follows:
 ```
