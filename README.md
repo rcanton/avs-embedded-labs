@@ -113,6 +113,7 @@ Reference: https://github.com/PowerShell/PowerShell
 ```
 # Change PowerShell ExecutionPolicy
 Set-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 # Install VMware PowerCLI
 Install-Module VMware.PowerCLI -scope AllUsers -Force -SkipPublisherCheck -AllowClobber
@@ -123,6 +124,7 @@ Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
 
 # Install YAML PowerShell Module
 Install-Module powershell-yaml -Force
+
 ```
 
 #### Edit nestedlabs.yml file
