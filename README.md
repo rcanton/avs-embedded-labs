@@ -51,7 +51,7 @@ az deployment sub create -l brazilsouth -n "202209200928-GPSUS-PARTNER1" -f ".\p
 ```
 Run the above command for each SDDC you'd like to build. If you don't want to wait for each process to finish or open multiple terminal sessions, add the --no-wait option as follows:
 ```
-az deployment sub create -l brazilsouth -n "202209200928-GPSUS-PARTNER1" -f "ESLZDeploy.deploy.json" -p "@.\parameters\avs-1.json" --no-wait
+az deployment sub create -l brazilsouth -n "202209200928-GPSUS-PARTNER1" -f ".\parameters\deploy\ESLZDeploy.deploy.json" -p "@.\parameters\avs-1.json" --no-wait
 ```
 
 > **IMPORTANT**: It's recommended that you create a unique name for your deployment. In our example above, we start the deployment name with the time stamp in the following format: YYYYMMDDHHMM. It's highly recommended to follow this format as if your deployment fails, subsequent tries may fail if you try to deploy them with the same name or another deployment with the same name is already running.
