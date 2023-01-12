@@ -42,7 +42,7 @@ Function My-Logger {
     Write-Host -NoNewline -ForegroundColor White "[$timestamp]"
     Write-Host -ForegroundColor Green " $message"
     $logMessage = "[$timeStamp] $message"
-    $logMessage | Out-File -Force -LiteralPath .\$verboseLogFile
+    $logMessage | Out-File -Force -LiteralPath .\$verboseLogFile -Append
 }
 
 My-Logger "Reading argurments, starting build process ........"
@@ -380,7 +380,8 @@ if($confirmDeployment -eq 1) {
     } else {
         Write-Host -ForegroundColor Green "`nAutomated Deployment!`n"
     }
-    Clear-Host
+    
+    #Clear-Host // commenting this cmdlet to make script eligible to be invoked using ForEach-Object -Parallel
 }
 
 if( $deployNFSVM -eq 1 -or $deployNestedESXiVMs -eq 1 -or $deployVCSA -eq 1) {
